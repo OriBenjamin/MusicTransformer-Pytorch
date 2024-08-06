@@ -90,6 +90,11 @@ def main():
     elif(args.continue_epoch is not None):
         print("ERROR: Need continue weights (-continue_weights) when using continue_epoch")
         return
+    else:
+        print("DON'T!")
+        print("DON'T!")
+        print("DON'T!")
+        return
 
     ##### Lr Scheduler vs static lr #####
     if(args.lr is None):

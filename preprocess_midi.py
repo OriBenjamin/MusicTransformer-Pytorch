@@ -6,8 +6,8 @@ import random
 
 import third_party.midi_processor.processor as midi_processor
 
-JSON_FILE = "maestro-v2.0.0.json"
-
+# JSON_FILE = "maestro-v2.0.0.json"
+JSON_FILE = "dean.json"
 # prep_midi
 def prep_maestro_midi(maestro_root, output_dir):
     """
@@ -59,7 +59,12 @@ def prep_maestro_midi(maestro_root, output_dir):
             return False
 
         prepped = midi_processor.encode_midi(mid)
-
+        if(prepped is None):
+            print("ERROR: Could not process midi:", mid)
+            # remove the file if it was created
+            if os.path.exists(o_file):
+                os.remove(o_file)
+            continue
         o_stream = open(o_file, "wb")
         pickle.dump(prepped, o_stream)
         o_stream.close()
