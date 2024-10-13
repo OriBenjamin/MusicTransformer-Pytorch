@@ -7,7 +7,7 @@ import random
 import third_party.midi_processor.processor as midi_processor
 
 # JSON_FILE = "maestro-v2.0.0.json"
-JSON_FILE = "dean.json"
+JSON_FILE = "midi_info.json"
 # prep_midi
 def prep_maestro_midi(maestro_root, output_dir):
     """

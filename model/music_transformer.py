@@ -130,7 +130,7 @@ class MusicTransformer(nn.Module):
 
         num_primer = len(primer)
         gen_seq[..., :num_primer] = primer.type(TORCH_LABEL_TYPE).to(get_device())
-
+        # print("size:",gen_seq.size())
 
         # print("primer:",primer)
         # print(gen_seq)

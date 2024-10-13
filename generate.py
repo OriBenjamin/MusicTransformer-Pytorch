@@ -81,7 +81,8 @@ def main():
             f_path = os.path.join(args.output_dir, "beam.mid")
             decode_midi(beam_seq[0].cpu().numpy(), file_path=f_path)
         else:
-            print("RAND DIST")
+            # print("RAND DIST")
+            # print(primer[:args.num_prime])
             rand_seq = model.generate(primer[:args.num_prime], args.target_seq_length, beam=0)
 
             f_path = os.path.join(args.output_dir, "rand.mid")

@@ -94,7 +94,8 @@ def main():
         print("DON'T!")
         print("DON'T!")
         print("DON'T!")
-        return
+        # return
+        pass
 
     ##### Lr Scheduler vs static lr #####
     if(args.lr is None):

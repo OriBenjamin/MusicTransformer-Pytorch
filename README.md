@@ -5,6 +5,36 @@ Currently supports Pytorch >= 1.2.0 with Python >= 3.6
 
 There is now a much friendlier [Google Colab version](https://github.com/asigalov61/SuperPiano/blob/master/Super_Piano_3.ipynb) of this project courtesy of [Alex](https://github.com/asigalov61)! 
 
+## Table of Contents
+### dataset
+- EPianoDataset class, which gets a root folder and processes to give x and tgt
+- ompute_epiano_accuracy (with softmax)
+### dataset_with_hands
+- Midi files to learn from (collected by Vista lab)
+- Corresponding h5 files for hand positions
+### maestro
+- The Maestro midi dataset
+### dataset_without_hands
+- Midi files to learn from (collected by Vista lab)
+### model
+- The music_transformer model, with generate function for continuing a sample sequence
+- SmoothCrossEntropyLoss
+### previous_models
+- models_maestro: trained parameters based on the Maestro dataset
+- start_x: trained parameters based on fine-tuning with dataset_without_hands
+### saved_models
+- weights and results of last training round
+### third_party
+- The midi_processor from midi to token sequence
+### utilities
+- argument_funcs: arguments for train, evaluate and generate commands
+- run_model: functions for learni=ing a batch and evaluating
+### main folder
+- evaluate, generate and train
+- graph_results
+- preprocess_midi: divides a dataset to train, evaluate and test
+
+
 ## About
 This is a reproduction of the MusicTransformer (Huang et al., 2018) for Pytorch. This implementation utilizes the generic Transformer implementation introduced in Pytorch 1.2.0 (https://pytorch.org/docs/stable/nn.html#torch.nn.Transformer).
 

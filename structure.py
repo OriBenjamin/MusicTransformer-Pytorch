@@ -9,7 +9,7 @@ from utilities.constants import *
 from utilities.device import cpu_device
 
 files_in_output_dir = os.listdir("output/test/")
-i_stream    = open("deans_out/test/output.mid.pickle", "rb")#+files_in_output_dir[0], "rb")
+i_stream    = open("deans_out/train/1.mid.pickle", "rb")#+files_in_output_dir[0], "rb")
 # return pickle.load(i_stream), None
 # set encoding to 'latin1' to avoid encoding errors
 # raw_mid     = pickle.load(i_stream)
@@ -22,7 +22,7 @@ print(raw_mid.shape)
 import pretty_midi
 # files_in_output_dir = os.listdir("maestro-v2.0.0/test/2006/")
 # midi_data = pretty_midi.PrettyMIDI("maestro-v2.0.0/2006/MIDI-Unprocessed_01_R1_2006_01-09_ORIG_MID--AUDIO_01_R1_2006_02_Track02_wav.midi")
-midi_data = pretty_midi.PrettyMIDI("deans_in/output.mid")
+midi_data = pretty_midi.PrettyMIDI("deans_in/1.mid")
 # print(dir(midi_data.instruments[0]))
 print(midi_data)
 print(midi_data.instruments[0].notes)
