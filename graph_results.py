@@ -94,7 +94,7 @@ def graph_results(input_dirs="./saved_models/results", output_dir=None, model_na
         plt.xlabel('Epochs')
         fig1 = plt.gcf()
 
-    plt.legend(loc="upper left")
+    plt.legend(["model"],loc="upper left")
 
     if(output_dir is not None):
         fig1.savefig(os.path.join(output_dir, 'loss_graph.png'))
@@ -115,7 +115,7 @@ def graph_results(input_dirs="./saved_models/results", output_dir=None, model_na
         plt.xlabel('Epochs')
         fig2 = plt.gcf()
 
-    plt.legend(loc="upper left")
+    plt.legend(["model"],loc="upper left")
 
     if(output_dir is not None):
         fig2.savefig(os.path.join(output_dir, 'accuracy_graph.png'))
@@ -136,7 +136,7 @@ def graph_results(input_dirs="./saved_models/results", output_dir=None, model_na
         plt.xlabel('Epochs')
         fig2 = plt.gcf()
 
-    plt.legend(loc="upper left")
+    plt.legend(["model"],loc="upper left")
 
     if(output_dir is not None):
         fig2.savefig(os.path.join(output_dir, 'lr_graph.png'))
@@ -223,7 +223,7 @@ def graph_results_legacy(input_dirs="./saved_models/results", output_dir=None, m
         plt.xlabel('Epochs')
         fig1 = plt.gcf()
 
-    plt.legend(loc="upper left")
+    plt.legend(["model"],loc="upper left")
 
     if(output_dir is not None):
         fig1.savefig(os.path.join(output_dir, 'loss_graph.png'))
@@ -243,7 +243,7 @@ def graph_results_legacy(input_dirs="./saved_models/results", output_dir=None, m
         plt.xlabel('Epochs')
         fig2 = plt.gcf()
 
-    plt.legend(loc="upper left")
+    plt.legend(["model"],loc="upper left")
 
     if(output_dir is not None):
         fig2.savefig(os.path.join(output_dir, 'accuracy_graph.png'))

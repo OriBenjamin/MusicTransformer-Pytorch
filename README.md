@@ -21,11 +21,16 @@ There is now a much friendlier [Google Colab version](https://github.com/asigalo
 - SmoothCrossEntropyLoss
 ### previous_models
 - models_maestro: trained parameters based on the Maestro dataset
-- start_x: trained parameters based on fine-tuning with dataset_without_hands
+- start_x: trained parameters based on fine-tuning with dataset_without_hands, starting with epoch x
+- saved_model_with_hands: trained parameters based on dataset_with_hands
+- finedtuned_model_with_hands: parameters of model trained on the Maestro dataset, and then finetuned (after epoch 70) on dataset_with_hands
+- models_maestro
+### graph_results
+accuracy and loss results of the models trained on dataset_with_hands
 ### saved_models
 - weights and results of last training round
 ### third_party
-- The midi_processor from midi to token sequence
+- The midi_processor from midi to token sequence (TODO: fix git connection with this folder, remove large files)
 ### utilities
 - argument_funcs: arguments for train, evaluate and generate commands
 - run_model: functions for learni=ing a batch and evaluating

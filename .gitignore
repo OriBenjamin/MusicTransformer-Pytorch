@@ -1,6 +1,6 @@
 **/saved_models/*
 **/outputGraphs/*
-
+**/previous_models/*
 **.mid
 **.pickle
 **.pyc
