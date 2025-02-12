@@ -66,7 +66,7 @@ You can also generate graphs representing the loss and accuracy during the train
 Notice the saved_models folder will store loss/accuracy information in a CSV file as long as it is not deleted or a different folder is used.
 
 
-<img src="graph_results/resresults_finetuning_with_hands.png" alt="graph_results" width="900"/>  
+<img src="graph_results/results_finetuning_with_hands.png" alt="graph_results" width="900"/>  
 
 *Graph representation of the results generated after training on Maestro-Dataset and finetuning on Dataset-With-Hands*
 
