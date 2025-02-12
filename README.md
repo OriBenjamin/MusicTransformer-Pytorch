@@ -10,11 +10,11 @@ in order to predict musical notes played on a piano, incorporating positional da
 Our aim is to enable smart and accessible piano playing, particularly for users requiring assistive technology,
 by creating a model capable of predicting future notes based on MIDI sequences and hand positioning.
 
-<img src="hand_position.jpg" alt="robotic_hand_demo" width="300"/>  
+<img src="hand_position.jpg" alt="hand_position" width="300"/>  
 
 *The information gathered from the moving hand in order to predict the next musical note*
 
-<img src="robotic_hand.png" alt="robotic_hand_demo" width="300"/>  
+<img src="robotic_hand.png" alt="robotic_hand" width="300"/>  
 
 *A robotic hand system whose finger positioning predictions we aim to improve (image taken from the paper "Towards Predicting Fine Finger Motions from Ultrasound Images via
 Kinematic Representation"*
@@ -23,13 +23,9 @@ Kinematic Representation"*
 The project supports Pytorch >= 1.2.0 with Python >= 3.6.
 In order to install the environment and necessery datasets:
 
-1. Download the Maestro dataset from [here](https://magenta.tensorflow.org/datasets/maestro)
+1. Download the Maestro dataset from [here](https://magenta.tensorflow.org/datasets/maestro) 
 
-2. Unzip the folder "midis.zip" and put the files in dataset_with_hands/midis
-
-3. Run git submodule update --init --recursive to get the MIDI pre-processor provided by jason9693 et al. (https://github.com/jason9693/midi-neural-processor), which is used to convert the MIDI file into discrete ordered message types for training and evaluating.
-
-4. Run `preprocess_midi.py -output_dir /preprocessed_maestro <path_to_maestro_data>`, or run with `--help` for details. This will write pre-processed data into folder split into train, val, and test as per Maestro's recommendation.
+2. Run `preprocess_midi.py -output_dir /preprocessed_maestro <path_to_maestro_data>`, or run with `--help` for details. This will write pre-processed data into folder split into train, val, and test as per Maestro's recommendation.
 
 ## Overview
 
@@ -62,11 +58,31 @@ You can generate a piece with a trained model by using:
 
 `python generate.py -output_dir output -midi_root some_midi_file.midi -model_weights ./saved_models/results/best_acc_weights.pickle`
 
+### Results and Graph Representation
 You can also generate graphs representing the loss and accuracy during the training process:
 
 `python graph_results.py -input_dirs ./saved_models/results -model_names model`
 
 Notice the saved_models folder will store loss/accuracy information in a CSV file as long as it is not deleted or a different folder is used.
+
+
+<img src="graph_results/resresults_finetuning_with_hands.png" alt="graph_results" width="900"/>  
+
+*Graph representation of the results generated after training on Maestro-Dataset and finetuning on Dataset-With-Hands*
+
+Out results of fine-tuning without the hand positions information are as follows:
+| Epoch starting point    | Best eval accuracy | Best loss accuracy |
+| ----- | ---------- | ---------- |
+| 50    | 0.36087    | 2.368667   |
+| 60    | 0.366437   | 2.3357536  |
+| 70    | 0.366953   | 2.340185   |
+| 80    | 0.3615234  | 2.35800906 |
+
+And the results of the training with hand positions are:
+
+Best eval acc: 0.39706962564018333
+
+Best eval loss: 2.0857395308741022
 
 ### Additional Information
 - The file utilities/argument_funcs contains all the default argument values for the train, evaluate and generate commands.
