@@ -91,11 +91,7 @@ def main():
         print("ERROR: Need continue weights (-continue_weights) when using continue_epoch")
         return
     else:
-        print("DON'T!")
-        print("DON'T!")
-        print("DON'T!")
-        # return
-        pass
+        print("WARNING: Training will start from scratch. Set continue_weights to a checkpoint file to resume training.")
 
     ##### Lr Scheduler vs static lr #####
     if(args.lr is None):
